@@ -14,8 +14,8 @@ io.on('connection', (socket) => {
     socket.on('sendChatToServer', (message) => {
         console.log(message);
 
-        // io.sockets.emit('sendChatToClient', message); // both of messages shown
-        socket.broadcast.emit('sendChatToClient', message); // only show the other party's messages
+        io.sockets.emit('sendChatToClient', message); // both of messages shown
+        // socket.broadcast.emit('sendChatToClient', message); // only show the other party's messages
     });
 
     // socket.emit();
